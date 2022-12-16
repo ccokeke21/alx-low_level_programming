@@ -1,46 +1,35 @@
 #include <stdio.h>
-#include "main.h"
 
-void print_fibonacci(int);
-
+void print_numbers(int);
 /**
- * main - calls print_fibonacci with 50
+ * main - calls print_numbers function
  *
  * Return: returns 0
  */
 int main(void)
 {
-	int n = 50;
+	int n = 1024;
 
-	print_fibonacci(n);
+	print_numbers(n);
 	return (0);
 }
 
 
 /**
- * print_fibonacci - prints out the fibonacci sequence of numbers
- * @i: the input number
+ * print_numbers - prints the sum of multiples of 5 and 3
+ * @i: number to be checked
  *
  * Return: returns nothing
  */
-void print_fibonacci(int i)
+void print_numbers(int i)
 {
 	int a;
+	int sum = 0;
 
-	long int b;
-	long int l = 2;
-	long int p = 1;
-
-	printf("%ld, %ld, ", p, l);
-	for (a = 3; a <= i; a++)
+	for (a = 0; a < i; a++)
 	{
-
-		b = p + l;
-		printf("%ld", b);
-		if (a != i)
-			printf(", ");
-		p = l;
-		l = b;
+		if (a % 3 == 0 || a % 5 == 0)
+			sum += a;
 	}
-	printf("\n");
+	printf("%d\n", sum);
 }
